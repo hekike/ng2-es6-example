@@ -1,0 +1,19 @@
+{
+  "ecmaFeatures": {
+    "modules": true,
+    "experimentalObjectRestSpread": true
+  },
+
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "mocha": true
+  },
+
+  "extends": "eslint-config-standard",
+
+  "plugins": [
+    "standard"
+  ]
+}
