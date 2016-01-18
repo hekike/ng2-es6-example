@@ -8,6 +8,7 @@ const compConfig = {
   providers: [PetService],
   template: `
     <h1>My name is {{ myName }}</h1>
+    <button (click)="onAddPet()">Add pet</button>
     <p>My pets are:</p>
     <ul>
       <li *ngFor="#petName of pets">
@@ -19,8 +20,14 @@ const compConfig = {
 
 class MainComponent {
   constructor (petService) {
+    this._petService = petService
+
     this.myName = 'Alice'
-    this.pets = petService.pets
+    this.pets = this._petService.get()
+  }
+
+  onAddPet () {
+    this._petService.add('new pet')
   }
 }
 
